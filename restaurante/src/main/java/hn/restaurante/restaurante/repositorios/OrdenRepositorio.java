@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import hn.restaurante.restaurante.modelos.Orden;
 
-public interface repositorioOrden extends JpaRepository<Orden, Integer> {
+public interface OrdenRepositorio extends JpaRepository<Orden, Integer> {
 }
 
