@@ -14,6 +14,8 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Data
 @Entity
 @Table(name = "platillos")
@@ -30,12 +32,15 @@ public class Platillo {
     private BigDecimal precio;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "idtipoplatillo")
     private TipoPlatillo tipoPlatillo;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "platillo")
     private List<PlatilloIngrediente> platilloIngredientes;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "platillo")
     private List<OrdenesPlatillos> ordenesPlatillos;
 }

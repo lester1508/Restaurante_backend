@@ -13,6 +13,7 @@ import hn.restaurante.restaurante.servicios.TipoUsuarioServicio;
 import hn.restaurante.restaurante.modelos.TipoUsuario;
 import hn.restaurante.restaurante.modelos.*;
 
+
 @RestController
 @RequestMapping("api/tipousuarios")
 public class TipoUsuarioControlador {

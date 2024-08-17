@@ -1,4 +1,4 @@
-package hn.restaurante.restaurante.restaurante.controladores;
+package hn.restaurante.restaurante.controladores;
 
 import java.util.List;
 
