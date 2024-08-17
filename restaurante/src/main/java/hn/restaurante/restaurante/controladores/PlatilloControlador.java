@@ -1,4 +1,4 @@
-package hn.restaurante.restaurante.restaurante.controladores;
+package hn.restaurante.restaurante.controladores;
 
 import java.util.List;
 
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hn.restaurante.restaurante.restaurante.modelos.Platillo;
-import hn.restaurante.restaurante.restaurante.modelos.Usuario;
-import hn.restaurante.restaurante.restaurante.servicios.PlatilloServicio;
-import hn.restaurante.restaurante.restaurante.servicios.UsuarioServicio;
+import hn.restaurante.restaurante.modelos.Platillo;
+import hn.restaurante.restaurante.modelos.Usuario;
+import hn.restaurante.restaurante.servicios.PlatilloServicio;
+import hn.restaurante.restaurante.servicios.UsuarioServicio;
 
 @RestController
 @RequestMapping("/api/platillos")
