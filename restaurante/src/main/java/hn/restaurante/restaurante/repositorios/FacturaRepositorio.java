@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import hn.restaurante.restaurante.modelos.Factura;
 
-public interface repositorioFactura extends JpaRepository<Factura, Integer> {
+public interface FacturaRepositorio extends JpaRepository<Factura, Integer> {
 }
 
