@@ -1,4 +1,4 @@
-package hn.restaurante.restaurante.restaurante.controladores;
+package hn.restaurante.restaurante.controladores;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hn.restaurante.restaurante.restaurante.modelos.Mesa;
-import hn.restaurante.restaurante.restaurante.modelos.Platillo;
-import hn.restaurante.restaurante.restaurante.servicios.MesaServicio;
+import hn.restaurante.restaurante.modelos.Mesa;
+import hn.restaurante.restaurante.modelos.Platillo;
+import hn.restaurante.restaurante.servicios.MesaServicio;
 
 @RestController
 @RequestMapping("/api/mesas")
