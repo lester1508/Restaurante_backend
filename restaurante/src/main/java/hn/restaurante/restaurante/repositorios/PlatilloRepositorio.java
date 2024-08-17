@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import hn.restaurante.restaurante.modelos.Platillo;
 
-public interface repositorioPlatillo extends JpaRepository<Platillo, Integer> {
+public interface PlatilloRepositorio extends JpaRepository<Platillo, Integer> {
 }
 
