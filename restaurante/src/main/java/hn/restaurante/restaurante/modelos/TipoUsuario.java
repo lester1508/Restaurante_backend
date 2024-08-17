@@ -3,6 +3,8 @@ package hn.restaurante.restaurante.modelos;
 import lombok.Data;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +24,7 @@ public class TipoUsuario {
 
     private String descripcion;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "tipoUsuario")
     private List<Usuario> usuarios;
 }

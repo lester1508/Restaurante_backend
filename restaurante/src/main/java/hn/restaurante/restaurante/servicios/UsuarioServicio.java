@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import hn.restaurante.restaurante.modelos.Usuario;
 import hn.restaurante.restaurante.repositorios.UsuarioRepositorio;
-import hn.restaurante.restaurante.modelos.*;
 
 @Service
 public class UsuarioServicio {
@@ -24,6 +24,11 @@ public class UsuarioServicio {
             return null;
         }
         return this.usuarioRepositorio.save(NuevoUsuario);
+    }
+
+    public List<Usuario> buscarPorEmailContrasena(Usuario usuario) {
+
+        return this.usuarioRepositorio.obtenerPorEmailContrasena(usuario.getEmail(), usuario.getContrasenia());
     }
     
 }
