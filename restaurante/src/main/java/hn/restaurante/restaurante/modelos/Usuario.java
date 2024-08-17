@@ -39,6 +39,7 @@ public class Usuario {
     @Column(name="fecha_creacion")
     private Timestamp fechaCreacion;
 
+
     @OneToMany(mappedBy = "usuario")
     private List<Orden> ordenes;
 

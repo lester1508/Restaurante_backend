@@ -14,7 +14,7 @@ import hn.restaurante.restaurante.repositorios.TipoUsuarioRepositorio;
 public class TipoPlatilloServicio {
 
     @Autowired
-    private TipoUsuarioRepositorio tipoPlatilloRepositorio;
+    private TipoPlatilloRepositorio tipoPlatilloRepositorio;
 
      public List <TipoPlatillo> obtenerTodos(){
         return this.tipoPlatilloRepositorio.findAll();

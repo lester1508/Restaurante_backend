@@ -22,9 +22,8 @@ public class PlatilloIngredienteControlador {
     private PlatilloIngredienteServicio platilloIngredienteServicio;
 
     @PostMapping("/asociar")
-    public PlatilloIngrediente asociarPlatilloIngrediante(int idPlatillo, int idIngrediente, BigDecimal cantidad){
-
-        return this.platilloIngredienteServicio.asociarPlatilloIngredientes(idPlatillo, idIngrediente, cantidad);
+    public PlatilloIngrediente asociarPlatilloIngrediante(int idPlatillo, int idIngrediente, Double cantidad){
+        return this.platilloIngredienteServicio.asociarPlatilloIngredientes(idPlatillo, idIngrediente, BigDecimal.valueOf(cantidad));
     }
 
     @GetMapping("/obtener")
