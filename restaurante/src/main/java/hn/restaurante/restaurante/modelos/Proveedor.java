@@ -11,6 +11,8 @@ import jakarta.persistence.Table;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Data
 @Entity
 @Table(name = "proveedor")
@@ -24,6 +26,7 @@ public class Proveedor {
     
     private String telefono;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "proveedor")
     private List<Ingrediente> ingredientes;
 
