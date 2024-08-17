@@ -7,24 +7,24 @@ import org.springframework.stereotype.Service;
 
 import hn.restaurante.restaurante.modelos.TipoUsuario;
 import hn.restaurante.restaurante.modelos.Usuario;
-import hn.restaurante.restaurante.repositorios.repositorioTipoUsuario;
+import hn.restaurante.restaurante.repositorios.TipoUsuarioRepositorio;
 
 @Service
 public class TipoUsuarioServicio {
     
     @Autowired
-    private repositorioTipoUsuario TipoUsuarioRepositorio;
+    private TipoUsuarioRepositorio tipoUsuarioRepositorio;
 
      public List <TipoUsuario> obtenerTodos(){
-        return this.TipoUsuarioRepositorio.findAll();
+        return this.tipoUsuarioRepositorio.findAll();
     }
 
 
     public TipoUsuario crearTipoUsuario(TipoUsuario NuevoTipoUsuario){
-        if(this.TipoUsuarioRepositorio.existsById(NuevoTipoUsuario.getIdTipoUsuario())){
+        if(this.tipoUsuarioRepositorio.existsById(NuevoTipoUsuario.getIdTipoUsuario())){
             return null;
         }
-        return this.TipoUsuarioRepositorio.save(NuevoTipoUsuario);
+        return this.tipoUsuarioRepositorio.save(NuevoTipoUsuario);
     }
     
 }
