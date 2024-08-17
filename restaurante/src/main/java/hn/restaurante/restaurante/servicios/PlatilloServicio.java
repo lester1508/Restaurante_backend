@@ -7,25 +7,25 @@ import org.springframework.stereotype.Service;
 
 import hn.restaurante.restaurante.modelos.Platillo;
 import hn.restaurante.restaurante.modelos.Usuario;
-import hn.restaurante.restaurante.repositorios.repositorioPlatillo;
+import hn.restaurante.restaurante.repositorios.PlatilloRepositorio;
 
 @Service
 public class PlatilloServicio {
 
     @Autowired 
-    private repositorioPlatillo PlatilloRepositorio;
+    private PlatilloRepositorio platilloRepositorio;
 
     //obtiene todos los platillos
      public List <Platillo> obtenerTodos(){
-        return this.PlatilloRepositorio.findAll();
+        return this.platilloRepositorio.findAll();
     }
 
     //crea un nuevo platillo
     public Platillo crearNuevoPlatillo(Platillo nuevoPlatillo){
-        if(this.PlatilloRepositorio.existsById(nuevoPlatillo.getIdPlatillo())){
+        if(this.platilloRepositorio.existsById(nuevoPlatillo.getIdPlatillo())){
             return null;
         }
-        return this.PlatilloRepositorio.save(nuevoPlatillo);
+        return this.platilloRepositorio.save(nuevoPlatillo);
     }
     
 }
