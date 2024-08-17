@@ -3,6 +3,7 @@ package hn.restaurante.restaurante.modelos;
 import lombok.Data;
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,10 +20,11 @@ import jakarta.persistence.Table;
 public class Orden {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="idorden")
     private int idOrden;
 
     @ManyToOne
-    @JoinColumn(name = "idUsuario")
+    @JoinColumn(name = "idusuario")
     private Usuario usuario;
 
     private String status;

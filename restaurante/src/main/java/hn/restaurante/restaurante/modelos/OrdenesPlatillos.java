@@ -16,12 +16,12 @@ import lombok.Data;
 public class OrdenesPlatillos {
     @Id
     @ManyToOne
-    @JoinColumn(name = "idOrden")
+    @JoinColumn(name = "idorden")
     private Orden orden;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "idPlatillo")
+    @JoinColumn(name = "idplatillo")
     private Platillo platillo;
 
     private int cantidad;

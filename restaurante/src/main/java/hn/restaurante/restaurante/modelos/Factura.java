@@ -1,8 +1,11 @@
 package hn.restaurante.restaurante.modelos;
 
 import lombok.Data;
+
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,14 +21,18 @@ import jakarta.persistence.Table;
 public class Factura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="idfactura")
     private int idFactura;
 
     @OneToOne
-    @JoinColumn(name = "idOrden")
+    @JoinColumn(name = "idorden")
     private Orden orden;
 
-    private double isv;
-    private double total;
+    private BigDecimal isv;
+
+    private BigDecimal total;
+
+    @Column(name = "fecha_entrega")
     private Timestamp fechaEntrega;
 }
 

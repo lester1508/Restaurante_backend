@@ -1,9 +1,12 @@
 package hn.restaurante.restaurante.modelos;
 
 import lombok.Data;
+
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,21 +18,23 @@ import jakarta.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "pedidoProveedor")
+@Table(name = "pedidoproveedor")
 public class PedidoProveedor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="idpedidoproveedor")
     private int idPedidoProveedor;
 
     @ManyToOne
-    @JoinColumn(name = "idProveedor")
+    @JoinColumn(name = "idproveedor")
     private Proveedor proveedor;
 
     @ManyToOne
-    @JoinColumn(name = "idUsuario")
+    @JoinColumn(name = "idusuario")
     private Usuario usuario;
 
-    private double total;
+    private BigDecimal total;
+
     private Timestamp fechaPedido;
 
     @OneToMany(mappedBy = "pedidoProveedor")

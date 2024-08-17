@@ -1,5 +1,8 @@
 package hn.restaurante.restaurante.modelos;
 
+import java.math.BigDecimal;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
@@ -10,20 +13,21 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "pedidoProveedor_ingredientes")
+@Table(name = "pedidoproveedor_ingredientes")
 @IdClass(PedidoProveedorIngredienteId.class)
 
 public class PedidoProveedorIngrediente {
     @Id
     @ManyToOne
-    @JoinColumn(name = "idPedidoProveedor")
+    @JoinColumn(name = "idpedidoproveedor")
     private PedidoProveedor pedidoProveedor;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "idIngrediente")
+    @JoinColumn(name = "idingrediente")
     private Ingrediente ingrediente;
 
-    private double cantidadComprada;
+    @Column(name="cantidadcomprada")
+    private BigDecimal cantidadComprada;
 }
 

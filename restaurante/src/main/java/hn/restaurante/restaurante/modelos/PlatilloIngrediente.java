@@ -1,6 +1,10 @@
 package hn.restaurante.restaurante.modelos;
 
 import lombok.Data;
+
+import java.math.BigDecimal;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
@@ -15,15 +19,16 @@ import jakarta.persistence.Table;
 public class PlatilloIngrediente {
     @Id
     @ManyToOne
-    @JoinColumn(name = "idIngrediente")
+    @JoinColumn(name = "idingrediente")
     private Ingrediente ingrediente;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "idPlatillo")
+    @JoinColumn(name = "idplatillo")
     private Platillo platillo;
 
-    private double cantidadIngrediente;
+    @Column(name="cantidad_ingrediente")
+    private BigDecimal cantidadIngrediente;
 }
 
 
