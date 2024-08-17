@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import hn.restaurante.restaurante.modelos.Reservacion;
 
-public interface repositorioReservacion extends JpaRepository<Reservacion, Integer> {
+public interface ReservacionRepositorio extends JpaRepository<Reservacion, Integer> {
 }
 
