@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hn.restaurante.restaurante.restaurante.modelos.TipoPlatillo;
-import hn.restaurante.restaurante.restaurante.modelos.TipoUsuario;
-import hn.restaurante.restaurante.restaurante.servicios.TipoPlatilloServicio;
+import hn.restaurante.restaurante.modelos.TipoPlatillo;
+import hn.restaurante.restaurante.modelos.TipoUsuario;
+import hn.restaurante.restaurante.servicios.TipoPlatilloServicio;
 
 @RestController
 @RequestMapping("/api/tipoplatillos")
