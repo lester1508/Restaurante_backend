@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import hn.restaurante.restaurante.modelos.Usuario;
 
-public interface repositorioUsuario extends JpaRepository<Usuario, Integer> {
+public interface UsuarioRepositorio extends JpaRepository<Usuario, Integer> {
 }
 
