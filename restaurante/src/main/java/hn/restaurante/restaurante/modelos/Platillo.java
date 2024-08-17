@@ -31,6 +31,10 @@ public class Platillo {
 
     private BigDecimal precio;
 
+    private char disponible;
+
+    private String img;
+
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "idtipoplatillo")

@@ -27,5 +27,15 @@ public class PlatilloServicio {
         }
         return this.platilloRepositorio.save(nuevoPlatillo);
     }
+
+    public Platillo obtenerPorId(int id) {
+
+        if(!this.platilloRepositorio.existsById(id)) {
+
+            return null;
+        }
+
+        return this.platilloRepositorio.findById(id).get();
+    }
     
 }
