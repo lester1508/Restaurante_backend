@@ -1,13 +1,13 @@
-package hn.restaurante.restaurante.restaurante.servicios;
+package hn.restaurante.restaurante.servicios;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import hn.restaurante.restaurante.restaurante.modelos.TipoUsuario;
-import hn.restaurante.restaurante.restaurante.modelos.Usuario;
-import hn.restaurante.restaurante.restaurante.repositorios.repositorioTipoUsuario;
+import hn.restaurante.restaurante.modelos.TipoUsuario;
+import hn.restaurante.restaurante.modelos.Usuario;
+import hn.restaurante.restaurante.repositorios.repositorioTipoUsuario;
 
 @Service
 public class TipoUsuarioServicio {

@@ -1,4 +1,4 @@
-package hn.restaurante.restaurante.restaurante.controladores;
+package hn.restaurante.restaurante.controladores;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hn.restaurante.restaurante.restaurante.servicios.UsuarioServicio;
+import hn.restaurante.restaurante.servicios.UsuarioServicio;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import hn.restaurante.restaurante.restaurante.modelos.*;
+import hn.restaurante.restaurante.modelos.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
