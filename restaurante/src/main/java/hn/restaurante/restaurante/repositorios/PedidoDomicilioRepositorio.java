@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import hn.restaurante.restaurante.modelos.PedidoDomicilio;
 
-public interface repositorioPedidoDomicilio extends JpaRepository<PedidoDomicilio, Integer> {
+public interface PedidoDomicilioRepositorio extends JpaRepository<PedidoDomicilio, Integer> {
 }
 
