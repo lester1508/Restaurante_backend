@@ -1,10 +1,10 @@
-package hn.restaurante.restaurante.restaurante.servicios;
+package hn.restaurante.restaurante.servicios;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import hn.restaurante.restaurante.restaurante.repositorios.MesaRepositorio;
-import hn.restaurante.restaurante.restaurante.modelos.*;
+import hn.restaurante.restaurante.restaurante.MesaRepositorio;
+import hn.restaurante.restaurante.modelos.*;
 import java.util.List;
 
 @Service
