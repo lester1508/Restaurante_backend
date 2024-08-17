@@ -1,12 +1,12 @@
-package hn.restaurante.restaurante.restaurante.servicios;
+package hn.restaurante.restaurante.servicios;
 
 import java.sql.Timestamp;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import hn.restaurante.restaurante.restaurante.modelos.Reservacion;
-import hn.restaurante.restaurante.restaurante.repositorios.ReservacionRepositorio;
+import hn.restaurante.restaurante.modelos.Reservacion;
+import hn.restaurante.restaurante.repositorios.ReservacionRepositorio;
 
 
 @Service
