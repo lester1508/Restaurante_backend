@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import hn.restaurante.restaurante.modelos.Mesa;
 
-public interface repositorioMesa extends JpaRepository<Mesa, Integer> {
+public interface MesaRepositorio extends JpaRepository<Mesa, Integer> {
 }
