@@ -30,4 +30,9 @@ public class ReservacionControlador {
             return this.reservacionServicio.crearNuevaReservacion(nuevaReservacion);
         }
 
+    @GetMapping("obtener/{id}")
+    public Reservacion obtenerPorId(@PathVariable int id) {
+        return this.reservacionServicio.obtenerPorId(id);
+    }
+
 }
