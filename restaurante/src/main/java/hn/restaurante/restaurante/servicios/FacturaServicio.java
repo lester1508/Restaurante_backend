@@ -1,5 +1,6 @@
 package hn.restaurante.restaurante.servicios;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class FacturaServicio {
 
     // Crea una nueva factura
     public Factura crearNuevaFactura(Factura nuevaFactura) {
+
+        nuevaFactura.setFechaEntrega(new Timestamp(System.currentTimeMillis()));
+
         return this.facturaRepositorio.save(nuevaFactura);
     }
 }

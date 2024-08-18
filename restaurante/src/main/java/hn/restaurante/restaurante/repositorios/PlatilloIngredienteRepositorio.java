@@ -9,6 +9,6 @@ import hn.restaurante.restaurante.modelos.PlatilloIngredienteId;
 
 public interface PlatilloIngredienteRepositorio extends JpaRepository<PlatilloIngrediente, PlatilloIngredienteId> {
 
-    //List<PlatilloIngrediente> findByPlatillo(int idPlatillo);
+    // List<PlatilloIngrediente> findByPlatillo(int idPlatillo);
 }
 

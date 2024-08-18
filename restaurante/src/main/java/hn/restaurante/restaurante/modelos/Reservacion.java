@@ -25,23 +25,17 @@ public class Reservacion {
     @Column(name="idreservacion")
     private int idReservacion;
 
-    private String status;
-
     @Column(name="fechainicio")
     private Timestamp fechaInicio;
 
     @Column(name="fechafinal")
     private Timestamp fechaFinal;
 
-    @JsonIgnore
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="codigo_mesa", referencedColumnName = "codigo_mesa")
     private Mesa mesa;
-
-    @JsonIgnore
+    
     @ManyToOne
-    @JoinColumn(name="idusuario", referencedColumnName = "idusuario")
-    private Usuario usuario;
-
-
+    @JoinColumn(name = "idorden")
+    private Orden orden;
 }

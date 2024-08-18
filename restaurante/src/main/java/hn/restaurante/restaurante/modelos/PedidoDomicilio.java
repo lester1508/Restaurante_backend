@@ -1,5 +1,6 @@
 package hn.restaurante.restaurante.modelos;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import jakarta.persistence.Column;
@@ -27,9 +28,9 @@ public class PedidoDomicilio {
 
     private String direccion;
     
-    private String status;
-
     @Column(name="fecha_entrega")
     private Timestamp fechaEntrega;
+
+    private BigDecimal precioenvio;
 }
 

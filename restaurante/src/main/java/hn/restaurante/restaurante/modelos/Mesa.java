@@ -3,6 +3,8 @@ package hn.restaurante.restaurante.modelos;
 import lombok.Data;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,6 +26,7 @@ public class Mesa {
     @Column(name="cantidad_sillas")
     private int cantidadSillas;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "mesa")
     private List<Reservacion> reservaciones;
 }

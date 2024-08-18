@@ -37,5 +37,32 @@ public class PlatilloServicio {
 
         return this.platilloRepositorio.findById(id).get();
     }
+
+    public String eliminarPorId(int id) {
+
+        if(!this.platilloRepositorio.existsById(id)){
+            return null;
+        }
+
+        this.platilloRepositorio.deleteById(id);
+
+        return "Platillo eliminado";
+    }
+
+    public Platillo actualizarPorId(int id, Platillo platillo) {
+
+        if(!this.platilloRepositorio.existsById(id)){
+            return null;
+        }
+        
+        Platillo platilloActualizar = this.platilloRepositorio.findById(id).get();
+
+        platilloActualizar.setNombre(platillo.getNombre());
+        platilloActualizar.setDescripcion(platillo.getDescripcion());
+        platilloActualizar.setPrecio(platillo.getPrecio());
+        platilloActualizar.setImg(platillo.getImg());
+
+        return this.platilloRepositorio.save(platilloActualizar);
+    }
     
 }
