@@ -30,11 +30,13 @@ public class Reservacion {
 
     @Column(name="fechafinal")
     private Timestamp fechaFinal;
-    
+
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name="codigo_mesa", referencedColumnName = "codigo_mesa")
     private Mesa mesa;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="idusuario", referencedColumnName = "idusuario")
     private Usuario usuario;
