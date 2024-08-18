@@ -3,6 +3,7 @@ package hn.restaurante.restaurante.controladores;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,8 @@ import hn.restaurante.restaurante.modelos.Usuario;
 import hn.restaurante.restaurante.servicios.PlatilloServicio;
 import hn.restaurante.restaurante.servicios.UsuarioServicio;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 @RestController
@@ -38,6 +41,18 @@ public class PlatilloControlador {
     public Platillo obtenerPorId(@PathVariable int id) {
 
         return this.platilloServicio.obtenerPorId(id);
+    }
+
+    @DeleteMapping("/eliminar/{id}")
+    public String eliminarPorId(@PathVariable int id) {
+
+        return this.platilloServicio.eliminarPorId(id);
+    }
+
+    @PutMapping("/actualizar/{id}")
+    public Platillo putMethodName(@PathVariable int id, @RequestBody Platillo platillo) {
+
+        return this.platilloServicio.actualizarPorId(id, platillo);
     }
     
 }
