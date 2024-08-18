@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -37,7 +38,7 @@ public class PedidoProveedor {
 
     private Timestamp fechaPedido;
 
-    @OneToMany(mappedBy = "pedidoProveedor")
+    @OneToMany(mappedBy = "pedidoProveedor" , cascade= CascadeType.ALL)
     private List<PedidoProveedorIngrediente> pedidoProveedorIngredientes;
 }
 

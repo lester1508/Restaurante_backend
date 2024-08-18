@@ -42,12 +42,15 @@ public class Usuario {
     private Timestamp fechaCreacion;
 
 
+    @JsonIgnore
     @OneToMany(mappedBy = "usuario")
     private List<Orden> ordenes;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "usuario")
     private List<PedidoProveedor> pedidosProveedor;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "usuario")
     private List<Reservacion> reservaciones;
 }

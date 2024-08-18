@@ -2,6 +2,8 @@ package hn.restaurante.restaurante.modelos;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -18,6 +20,7 @@ import lombok.Data;
 
 public class PedidoProveedorIngrediente {
     @Id
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "idpedidoproveedor")
     private PedidoProveedor pedidoProveedor;

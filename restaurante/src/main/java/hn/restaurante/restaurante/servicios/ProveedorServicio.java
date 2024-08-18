@@ -33,7 +33,7 @@ public class ProveedorServicio {
         if(this.proveedorRepositorio.existsById(idProveedor)){
             String nombre = this.proveedorRepositorio.findById(idProveedor).get().getNombre();
             this.proveedorRepositorio.deleteById(idProveedor);
-            return "Se ha eliminado el proveedor" + nombre;
+            return "Se ha eliminado el proveedor llamado: " + nombre;
         }
 
         return "el proveedor no existe";
