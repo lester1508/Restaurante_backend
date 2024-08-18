@@ -30,8 +30,11 @@ public class Ingrediente {
     @Column(name="cantidad_disponible")
     private BigDecimal cantidadDisponible;
 
+    private BigDecimal puntoreorden;
+
+    private String unidad;
+
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "idproveedor")
     private Proveedor proveedor;
 
