@@ -50,10 +50,7 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario")
     private List<PedidoProveedor> pedidosProveedor;
 
-<<<<<<< HEAD
     @JsonIgnore
     @OneToMany(mappedBy = "usuario")
     private List<Reservacion> reservaciones;
-=======
->>>>>>> 8e6efb482d5d99a745c0d48fdc590e7823e0b2bb
 }

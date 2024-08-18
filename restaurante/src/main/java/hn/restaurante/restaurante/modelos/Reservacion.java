@@ -38,4 +38,8 @@ public class Reservacion {
     @ManyToOne
     @JoinColumn(name = "idorden")
     private Orden orden;
+
+    @ManyToOne
+    @JoinColumn(name="idusuario")
+    private Usuario usuario;
 }
