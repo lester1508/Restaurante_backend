@@ -30,6 +30,7 @@ public class Ingrediente {
     @Column(name="cantidad_disponible")
     private BigDecimal cantidadDisponible;
 
+    @Column(name="puntoreorden")
     private BigDecimal puntoreorden;
 
     private String unidad;
