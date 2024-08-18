@@ -2,6 +2,8 @@ package hn.restaurante.restaurante.modelos;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,11 +32,13 @@ public class Reservacion {
 
     @Column(name="fechafinal")
     private Timestamp fechaFinal;
-    
+
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name="codigo_mesa", referencedColumnName = "codigo_mesa")
     private Mesa mesa;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="idusuario", referencedColumnName = "idusuario")
     private Usuario usuario;

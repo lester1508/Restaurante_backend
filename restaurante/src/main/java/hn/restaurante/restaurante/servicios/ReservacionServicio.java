@@ -35,5 +35,9 @@ public class ReservacionServicio {
         cal.add(Calendar.HOUR, duracion_reserva);
         reservacion.setFechaFinal(new Timestamp(cal.getTime().getTime()));
     }
+
+     public Reservacion obtenerPorId(int id){
+        return this.reservacionRepositorio.findById(id).get();
+    }
    
 }

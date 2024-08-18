@@ -1,6 +1,7 @@
 package hn.restaurante.restaurante.servicios;
 
 import java.util.List;
+import java.sql.Timestamp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,10 @@ public class UsuarioServicio {
         tipoUsuario.setIdTipoUsuario(2);
         tipoUsuario.setDescripcion("cliente");
 
+
         NuevoUsuario.setTipoUsuario(tipoUsuario);
+        long now = System.currentTimeMillis();
+        NuevoUsuario.setFechaCreacion(new Timestamp(now));
 
         return this.usuarioRepositorio.save(NuevoUsuario);
     }
