@@ -54,6 +54,11 @@ public class UsuarioControlador {
 
         return this.usuarioServicio.buscarPorEmailContrasena(usuario);
     }
+
+    @GetMapping("obtener/{id}")
+    public Reservacion obtenerPorId(@PathVariable int id) {
+        return this.reservacionServicio.obtenerPorId(id);
+    }
 }
    
     
