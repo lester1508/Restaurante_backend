@@ -33,6 +33,7 @@ public class UsuarioServicio {
 
 
         NuevoUsuario.setTipoUsuario(tipoUsuario);
+
         long now = System.currentTimeMillis();
         NuevoUsuario.setFechaCreacion(new Timestamp(now));
 

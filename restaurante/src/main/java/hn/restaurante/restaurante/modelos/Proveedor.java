@@ -1,6 +1,7 @@
 package hn.restaurante.restaurante.modelos;
 
 import lombok.Data;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,10 +27,10 @@ public class Proveedor {
     
     private String telefono;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "proveedor")
+    @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL)
     private List<Ingrediente> ingredientes;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "proveedor")
     private List<PedidoProveedor> pedidosProveedor;
 }

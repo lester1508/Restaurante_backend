@@ -36,6 +36,7 @@ public class Ingrediente {
     private String unidad;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "idproveedor")
     private Proveedor proveedor;
 
