@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import hn.restaurante.restaurante.modelos.Orden;
 import hn.restaurante.restaurante.repositorios.OrdenRepositorio;
+import jakarta.transaction.Transactional;
 
 @Service
 public class OrdenServicio {
@@ -24,6 +25,18 @@ public class OrdenServicio {
         if (this.ordenRepositorio.existsById(nuevaOrden.getIdOrden())) {
             return null;
         }
+
         return this.ordenRepositorio.save(nuevaOrden);
+    }
+
+    @Transactional
+    public void confirmarOrden(int id) {
+
+        if(!this.ordenRepositorio.existsById(id)) {
+
+            return;
+        }
+
+        this.ordenRepositorio.confirmarOrden(id);
     }
 }

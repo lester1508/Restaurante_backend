@@ -27,4 +27,9 @@ public class FacturaServicio {
 
         return this.facturaRepositorio.save(nuevaFactura);
     }
+
+    public Factura obtenerPorId(int id) {
+
+        return this.facturaRepositorio.findById(id).get();
+    }
 }

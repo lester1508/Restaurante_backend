@@ -1,6 +1,7 @@
 package hn.restaurante.restaurante.modelos;
 
 import lombok.Data;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,8 +36,7 @@ public class Ingrediente {
 
     private String unidad;
 
-    @ManyToOne
-    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idproveedor")
     private Proveedor proveedor;
 

@@ -36,23 +36,32 @@ public class OrdenesPlatillosServicio {
 
     public OrdenesPlatillos asociarPlatilloAOrden(int idOrden, int idPlatillo, int cantidad) {
         if (ordenRepositorio.existsById(idOrden) && platilloRepositorio.existsById(idPlatillo)) {
+
             OrdenesPlatillosId ordenesPlatillosId = new OrdenesPlatillosId();
             ordenesPlatillosId.setOrden(idOrden);
             ordenesPlatillosId.setPlatillo(idPlatillo);
 
             if (!ordenesPlatillosRepositorio.existsById(ordenesPlatillosId)) {
+
                 OrdenesPlatillos ordenesPlatillos = new OrdenesPlatillos();
                 ordenesPlatillos.setOrden(ordenRepositorio.findById(idOrden).get());
                 ordenesPlatillos.setPlatillo(platilloRepositorio.findById(idPlatillo).get());
                 ordenesPlatillos.setCantidad(cantidad);
 
                 // Verificar y actualizar la cantidad de ingredientes disponibles
-                List<PlatilloIngrediente> platilloIngredientes = platilloIngredienteRepositorio.findByPlatillo(idPlatillo);
+                List<PlatilloIngrediente> platilloIngredientes = platilloIngredienteRepositorio.findByPlatillo(this.platilloRepositorio.findById(idPlatillo).get());
+
                 for (PlatilloIngrediente platilloIngrediente : platilloIngredientes) {
-                    BigDecimal cantidadRequerida = platilloIngrediente.getCantidadIngrediente().multiply(BigDecimal.valueOf(cantidad));
+
+                    BigDecimal cantidadRequerida = platilloIngrediente.getCantidadIngrediente();
                     Ingrediente ingrediente = platilloIngrediente.getIngrediente();
+
+                    ingrediente.setCantidadDisponible(ingrediente.getCantidadDisponible().subtract(cantidadRequerida));
+
                     if (ingrediente.getCantidadDisponible().compareTo(cantidadRequerida) < 0) {
-                        return null; // Cantidad de ingrediente insuficiente
+
+                    } else {
+                        this.ingredienteRepositorio.save(ingrediente);
                     }
                 }
 

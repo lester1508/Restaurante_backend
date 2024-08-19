@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Mesa {
     private int cantidadSillas;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "mesa")
+    @OneToMany(mappedBy = "mesa", cascade = CascadeType.ALL)
     private List<Reservacion> reservaciones;
 }
 

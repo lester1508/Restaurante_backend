@@ -3,6 +3,7 @@ package hn.restaurante.restaurante.controladores;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,6 +54,12 @@ public class UsuarioControlador {
     public List<Usuario> buscarUsuarioE(@RequestBody Usuario usuario) {
 
         return this.usuarioServicio.buscarPorEmailContrasena(usuario);
+    }
+
+    @DeleteMapping("/eliminar/{id}")
+    public String eliminarPorId(@PathVariable int id) {
+
+        return this.usuarioServicio.eliminarPorId(id);
     }
 
 }

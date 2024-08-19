@@ -71,5 +71,14 @@ public class UsuarioServicio {
 
         return null;
     }
+
+    public String eliminarPorId(int id) {
+
+        if(!this.usuarioRepositorio.existsById(id)){
+            return null;
+        }
+        this.usuarioRepositorio.deleteById(id);
+        return "Usuario eliminado";
+    }
     
 }

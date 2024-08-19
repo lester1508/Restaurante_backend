@@ -4,6 +4,8 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -24,6 +26,7 @@ public class PlatilloIngrediente {
 
     @Id
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "idplatillo")
     private Platillo platillo;
 

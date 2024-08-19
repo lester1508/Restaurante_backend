@@ -1,6 +1,7 @@
 package hn.restaurante.restaurante.modelos;
 
 import lombok.Data;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,11 +41,10 @@ public class Platillo {
     @JoinColumn(name = "idtipoplatillo")
     private TipoPlatillo tipoPlatillo;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "platillo")
+    @OneToMany(mappedBy = "platillo", cascade = CascadeType.ALL)
     private List<PlatilloIngrediente> platilloIngredientes;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "platillo")
+    @OneToMany(mappedBy = "platillo", cascade = CascadeType.ALL)
     private List<OrdenesPlatillos> ordenesPlatillos;
 }

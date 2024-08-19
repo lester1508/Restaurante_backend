@@ -2,6 +2,7 @@ package hn.restaurante.restaurante.controladores;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,8 @@ import hn.restaurante.restaurante.servicios.IngredienteServicio;
 import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
@@ -19,6 +22,13 @@ public class IngredienteControlador {
 
     @Autowired
     private IngredienteServicio ingredienteServicio;
+
+    @GetMapping("/{id}")
+    public Ingrediente obtenerPorId(@PathVariable int id) {
+
+        return this.ingredienteServicio.obtenerPorId(id);
+    }
+    
     
     @GetMapping("/obtener/todos")
     public List<Ingrediente> obtenerTodos() {

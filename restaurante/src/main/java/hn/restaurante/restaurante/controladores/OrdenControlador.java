@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import hn.restaurante.restaurante.modelos.Orden;
 import hn.restaurante.restaurante.servicios.OrdenServicio;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 @RestController
 @RequestMapping("/api/ordenes")
@@ -27,5 +30,11 @@ public class OrdenControlador {
     @PostMapping("/crear/orden")
     public Orden crearNuevaOrden(@RequestBody Orden nuevaOrden) {
         return this.ordenServicio.crearNuevaOrden(nuevaOrden);
+    }
+
+    @PutMapping("/confirmar/{id}")
+    public void confirmarOrden(@PathVariable int id){
+
+        this.ordenServicio.confirmarOrden(id);
     }
 }

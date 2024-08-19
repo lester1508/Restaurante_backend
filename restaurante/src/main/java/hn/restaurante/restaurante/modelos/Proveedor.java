@@ -27,6 +27,7 @@ public class Proveedor {
     
     private String telefono;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL)
     private List<Ingrediente> ingredientes;
 

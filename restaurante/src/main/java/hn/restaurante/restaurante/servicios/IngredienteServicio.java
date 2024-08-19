@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 import hn.restaurante.restaurante.modelos.Ingrediente;
 import hn.restaurante.restaurante.repositorios.IngredienteRepositorio;
+
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -20,7 +22,19 @@ public class IngredienteServicio {
 
     public Ingrediente crearIngrediente(Ingrediente ingrediente) {
 
+        ingrediente.setCantidadDisponible(new BigDecimal(0));
+
         return this.ingredienteRepositorio.save(ingrediente);
+    }
+
+    public Ingrediente obtenerPorId(int id) {
+
+        if(!this.ingredienteRepositorio.existsById(id)) {
+
+            return null;
+        }
+
+        return this.ingredienteRepositorio.findById(id).get();
     }
 
     

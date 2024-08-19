@@ -1,5 +1,7 @@
 package hn.restaurante.restaurante.modelos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
@@ -16,6 +18,7 @@ import lombok.Data;
 public class OrdenesPlatillos {
     @Id
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "idorden")
     private Orden orden;
 

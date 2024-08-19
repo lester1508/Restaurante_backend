@@ -107,5 +107,20 @@ public class PedidoProveedorServicio {
         return null;
     }
 
+    public Ingrediente crearPedido(int idIngrediente, BigDecimal cantidad) {
+
+        if(!this.ingredienteRepositorio.existsById(idIngrediente)) {
+
+            return null;
+        }
+
+        Ingrediente ingrediente = this.ingredienteRepositorio.findById(idIngrediente).get();
+        ingrediente.setCantidadDisponible(ingrediente.getCantidadDisponible().add(cantidad));
+
+        this.ingredienteRepositorio.save(ingrediente);
+
+        return ingrediente;
+    }
+
     
 }

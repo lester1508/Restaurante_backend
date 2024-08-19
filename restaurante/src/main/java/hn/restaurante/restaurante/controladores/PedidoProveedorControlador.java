@@ -1,5 +1,6 @@
 package hn.restaurante.restaurante.controladores;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,10 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import hn.restaurante.restaurante.modelos.Ingrediente;
 import hn.restaurante.restaurante.modelos.PedidoProveedor;
 import hn.restaurante.restaurante.servicios.PedidoProveedorServicio;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -22,11 +25,11 @@ public class PedidoProveedorControlador {
     @Autowired
     private PedidoProveedorServicio pedidoProveedorServicio;
 
-    @PostMapping("/crear")
-    public PedidoProveedor crearPedidoProveedor(@RequestBody PedidoProveedor pedidoProveedor) {
-        
-        return this.pedidoProveedorServicio.crearPedidoProveedor(pedidoProveedor);
-    }
+    // @PostMapping("/crear")
+    // public PedidoProveedor crearPedidoProveedor(@RequestBody PedidoProveedor pedidoProveedor) {
+    //     
+    //     return this.pedidoProveedorServicio.crearPedidoProveedor(pedidoProveedor);
+    // }
     
     @GetMapping("/obtener/por/proveedor")
     public List<PedidoProveedor> obtenerPedidosProveedor(@RequestParam int idProveedor) {
@@ -34,5 +37,12 @@ public class PedidoProveedorControlador {
         
         return this.pedidoProveedorServicio.obtenerPedidosProveedor(idProveedor);
     }
+
+    @PostMapping("/crear")
+    public Ingrediente crearPedido(@RequestParam int idIngrediente, @RequestParam BigDecimal cantidad) {
+
+        return this.pedidoProveedorServicio.crearPedido(idIngrediente, cantidad);
+    }
+    
     
 }

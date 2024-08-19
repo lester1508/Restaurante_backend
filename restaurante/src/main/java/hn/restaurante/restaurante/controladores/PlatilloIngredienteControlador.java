@@ -22,7 +22,7 @@ public class PlatilloIngredienteControlador {
     private PlatilloIngredienteServicio platilloIngredienteServicio;
 
     @PostMapping("/asociar")
-    public PlatilloIngrediente asociarPlatilloIngrediante(int idPlatillo, int idIngrediente, Double cantidad){
+    public PlatilloIngrediente asociarPlatilloIngrediante(@RequestParam int idPlatillo, @RequestParam int idIngrediente, @RequestParam Double cantidad){
         return this.platilloIngredienteServicio.asociarPlatilloIngredientes(idPlatillo, idIngrediente, BigDecimal.valueOf(cantidad));
     }
 

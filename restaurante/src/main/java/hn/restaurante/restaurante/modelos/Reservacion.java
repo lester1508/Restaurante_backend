@@ -32,14 +32,10 @@ public class Reservacion {
     private Timestamp fechaFinal;
 
     @ManyToOne
-    @JoinColumn(name="codigo_mesa", referencedColumnName = "codigo_mesa")
+    @JoinColumn(name="codigo_mesa")
     private Mesa mesa;
     
     @ManyToOne
     @JoinColumn(name = "idorden")
     private Orden orden;
-
-    @ManyToOne
-    @JoinColumn(name="idusuario")
-    private Usuario usuario;
 }
