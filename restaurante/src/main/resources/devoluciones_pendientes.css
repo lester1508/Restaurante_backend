@@ -1,0 +1,104 @@
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: #f8f9fa;
+  padding-top: 72px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  width: 260px;
+  height: calc(100vh - 72px);
+  background: #212529;
+  overflow-y: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.nav-link.active {
+  background: #0d6efd;
+  color: white;
+}
+
+/* User Avatar */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+/* Main content */
+.main-content {
+  margin-left: 260px;
+  padding: 1.5rem;
+}
+
+/* Cards */
+.stat-card {
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.stat-icon.total {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+}
+
+.stat-icon.alert {
+  background: linear-gradient(135deg, #ff9800, #ffc107);
+}
+
+.stat-icon.warning {
+  background: linear-gradient(135deg, #f44336, #e91e63);
+}
+
+/* Table */
+.table th {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #495057;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
