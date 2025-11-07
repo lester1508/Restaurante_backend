@@ -1,0 +1,134 @@
+:root {
+  --sidebar-width: 280px;
+  --navbar-height: 72px;
+  --transition-speed: 0.3s;
+  --primary-color: #0d6efd;
+}
+
+/* ====== BASE ====== */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  padding-top: var(--navbar-height);
+}
+
+#sidebar-toggle {
+  display: none;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  height: var(--navbar-height);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  background-color: #212529;
+  transform: translateX(-100%);
+  transition: transform var(--transition-speed) ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+  transform: translateX(0);
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.85);
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* ====== MAIN CONTENT ====== */
+.main-content {
+  transition: margin-left var(--transition-speed) ease;
+}
+
+#sidebar-toggle:checked ~ .main-content {
+  margin-left: var(--sidebar-width);
+}
+
+/* ====== TARJETAS ====== */
+.stat-card {
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.stat-icon.total {
+  background: linear-gradient(135deg, #2c5aa0, #3a6bc0);
+}
+
+.stat-icon.on-time {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.stat-icon.delayed {
+  background: linear-gradient(135deg, #fa709a, #fee140);
+}
+
+/* ====== TABLA ====== */
+.table th {
+  font-weight: 600;
+  color: #495057;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border-top: none;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.badge {
+  font-size: 0.85rem;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0);
+  }
+  .main-content {
+    margin-left: var(--sidebar-width);
+  }
+}
